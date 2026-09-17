@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Modul 2 & 3 - Multimedia dan Bootstrap</title>
+
+<!-- ===================== STYLE MODUL 2 ===================== -->
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    line-height: 1.6;
+  }
+  h1 {
+    text-align: center;
+    color: #2c3e50;
+  }
+  h2 {
+    color: #2980b9;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 5px;
+    margin-top: 40px;
+  }
+  section {
+    margin-bottom: 40px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+  }
+  #div1, #div2 {
+    float: left;
+    width: 120px;
+    height: 40px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    background: #fff;
+  }
+  button {
+    margin: 5px;
+    padding: 6px 12px;
+  }
+</style>
+
+<!-- ===================== BOOTSTRAP MODUL 3 ===================== -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<h1>Praktikum Multimedia<br>Modul 2 - HTML Audio, Video, Youtube dan API</h1>
+
+<!-- ===================== AUDIO ===================== -->
+<section>
+  <h2>1. HTML Audio</h2>
+  <p>Contoh elemen &lt;audio&gt; untuk memutar file suara:</p>
+  <audio controls>
+    <source src="audio/mambo_uma_musume.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung elemen audio.
+  </audio>
+</section>
+
+<!-- ===================== VIDEO ===================== -->
+<section>
+  <h2>2. HTML Video</h2>
+  <p>Contoh elemen &lt;video&gt; untuk memutar file video:</p>
+  <video width="320" height="240" controls>
+    <source src="video/mambo.mp4" type="video/mp4">
+    Browser Anda tidak mendukung tag video.
+  </video>
+</section>
+
+<!-- ===================== VIDEO + JAVASCRIPT ===================== -->
+<section>
+  <h2>3. HTML Video dengan JavaScript (Play/Pause & Resize)</h2>
+  <div style="text-align:center">
+    <button onclick="playPause()">Play/Pause</button>
+    <button onclick="makeBig()">Big</button>
+    <button onclick="makeSmall()">Small</button>
+    <button onclick="makeNormal()">Normal</button>
+    <br><br>
+    <video id="video1" width="420" controls>
+      <source src="video/mambo.mp4" type="video/mp4">
+      Browser Anda tidak mendukung HTML5 video.
+    </video>
+  </div>
+</section>
+
+<!-- ===================== YOUTUBE ===================== -->
+<section>
+  <h2>4. HTML YouTube Video (iFrame)</h2>
+  <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/lgq0OdRIEao">
+  </iframe>
+
+  <h3>YouTube dengan Autoplay</h3>
+  <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/lgq0OdRIEao?autoplay=1">
+  </iframe>
+
+  <h3>YouTube dengan Loop</h3>
+  <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/lgq0OdRIEao?playlist=lgq0OdRIEao&loop=1">
+  </iframe>
+
+  <h3>YouTube tanpa Controls</h3>
+  <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/lgq0OdRIEao?controls=0">
+  </iframe>
+</section>
+
+<!-- ===================== GEOLOCATION API ===================== -->
+<section>
+  <h2>5. HTML Geolocation API</h2>
+  <p>Klik tombol untuk mendapatkan koordinat lokasi Anda.</p>
+  <button onclick="getLocation()">Try It</button>
+  <p id="demo"></p>
+</section>
+
+<!-- ===================== DRAG AND DROP API ===================== -->
+<section>
+  <h2>6. HTML Drag and Drop API</h2>
+  <p>Seret (drag) gambar logo di bawah ini bolak-balik di antara dua kotak:</p>
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"
+       style="width:150px; height:100px; float:left; margin:10px; padding:10px;
+              border:2px dashed #2196F3; border-radius:8px; background:#f4f6f7;
+              display:flex; align-items:center; justify-content:center;">
+    <img src="image/Unsrat.gif" draggable="true"
+         ondragstart="drag(event)" id="drag1" width="70" height="70">
+  </div>
+  <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"
+       style="width:150px; height:100px; float:left; margin:10px; padding:10px;
+              border:2px dashed #2196F3; border-radius:8px; background:#f4f6f7;
+              display:flex; align-items:center; justify-content:center;"></div>
+</section>
+
+<!-- ============================================================ -->
+<!-- =====================  BATAS MODUL 2 / 3  ===================== -->
+<!-- ============================================================ -->
+<hr style="clear:both; border: 3px solid #2c3e50; margin: 60px 0;">>
+
+<!-- ===================== MODUL 3 : HTML DAN BOOTSTRAP ===================== -->
+<h1>Modul 3 - HTML dan BOOTSTRAP</h1>
+
+<div class="container">
+  <h1>Form Registrasi</h1>
+  <form action="">
+    <div class="col-sm-10">
+      <div class="form-group">
+        <label for="name"> Nama :</label>
+        <input type="text" class="form-control" placeholder="Name" name="nama" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email :</label>
+        <input type="email" class="form-control" placeholder="Email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password :</label>
+        <input type="password" class="form-control" placeholder="Password" name="Password" required>
+      </div>
+      <div class="form-group">
+        <label for="jk">Jenis Kelamin:</label>
+        <select class="form-control" id="jk">
+          <option>Pria</option>
+          <option>Wanita</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+
+
+<script>
+  // ---- Video JS ----
+  var myVideo = document.getElementById("video1");
+  function playPause() {
+    if (myVideo.paused) myVideo.play();
+    else myVideo.pause();
+  }
+  function makeBig() { myVideo.width = 560; }
+  function makeSmall() { myVideo.width = 320; }
+  function makeNormal() { myVideo.width = 420; }
+
+  // ---- Geolocation ----
+  var x = document.getElementById("demo");
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+      "<br>Longitude: " + position.coords.longitude;
+  }
+
+  // ---- Drag and Drop ----
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+</script>
+
+<!-- ===================== FOOTER ===================== -->
+<footer style="text-align:center; padding:20px; margin-top:40px; background:#2c3e50; color:white;">
+  <p>Nama: Rafael Charlie Samuel Tappy</p>
+  <p>NIM: 240211060053</p>
+</footer>
+
+</body>
+</html>
